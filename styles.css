@@ -47,9 +47,9 @@ h3 { font-size: var(--text-xl); line-height: 1.2; }
   font-size: var(--text-lg);
   line-height: 1;
   text-decoration: none;
-  transition: border-color var(--dur-short) var(--ease-out);
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
 }
-.mark:hover { border-color: var(--color-rule); }
+.mark:hover, .mark:focus-visible { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-accent-ink); }
 .nav__links { display: flex; gap: var(--space-xl); }
 .nav__links a {
   font-size: var(--text-sm);
