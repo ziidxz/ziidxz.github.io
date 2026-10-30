@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.classList.add('js');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ziidx, software from a phone</title>
 <meta name="description" content="Android apps, Termux tools and small web pages, built on a phone. Eight projects, one opened up, and the code on GitHub.">
@@ -19,11 +20,12 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="plot" aria-hidden="true"></div>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="nav">
   <div class="container nav__in">
-    <a class="mark" href="#top" aria-label="ziidx, back to the top">ziidx</a>
+    <a class="mark" href="#top" aria-label="Back to the top"><span class="mark__z" aria-hidden="true">Z</span></a>
     <nav class="nav__links" aria-label="Main">
       <a href="#register">Work</a>
       <a href="https://github.com/ziidxz" rel="me">GitHub</a>
@@ -42,7 +44,7 @@
         <a class="btn btn--quiet" href="https://github.com/ziidxz" rel="me">GitHub</a>
       </div>
       <div class="dim">
-        <span class="dim__value">github.com/ziidxz</span>
+        <span class="dim__value">GitHub account</span>
         <div class="dim__line">
           <span class="dim__end">Sep 2024</span>
           <span class="dim__end dim__end--last">Oct 2026</span>
@@ -141,7 +143,7 @@
           <span class="reg__c reg__c--no num">01</span>
           <h3 class="reg__c reg__c--name">termux-browser</h3>
           <span class="reg__c reg__c--what" data-label="Missing">Chromium, WebView</span>
-          <span class="reg__c reg__c--with" data-label="Runs instead">its own cascade and PNG codec</span>
+          <span class="reg__c reg__c--with" data-label="Runs instead">its own cascade, PNG codec</span>
         </li>
         <li class="reg__row">
           <span class="reg__c reg__c--no num">02</span>
@@ -164,7 +166,7 @@
       <div class="sheet__text">
         <p class="sheet__no num">01</p>
         <h2>termux-browser</h2>
-        <p class="lead">Chromium cannot run in Termux, so the engine is written here.</p>
+        <p class="lead">Chromium cannot run in Termux; the engine is written here.</p>
         <dl class="facts">
           <div><dt>Runs on</dt><dd>Node, on this phone</dd></div>
           <div><dt>Renders</dt><dd>cascade, flex, grid</dd></div>
@@ -181,37 +183,66 @@
   tbrowse check &lt;file&gt;
 
 <span class="c">$</span> node bin/tbrowse.mjs check index.html
-<span class="out">page: 3475px tall at 1440px wide</span></code></pre>
+<span class="out">page: 3359px tall at 1440px wide</span></code></pre>
       </figure>
     </div>
   </section>
 
   <section class="close" id="contact">
-    <div class="container close__in">
-      <div>
-        <h2>Code on GitHub</h2>
-        <p class="lead">Four repos, two live pages.</p>
+    <div class="container">
+      <div class="close__in">
+        <div>
+          <h2>Code on GitHub</h2>
+          <p class="lead">Four repos, two live pages.</p>
+        </div>
+        <div class="close__side">
+          <a class="btn" href="https://github.com/ziidxz/ziidxz.github.io/issues">Open an issue</a>
+          <p class="live live--line">Questions or work: <a href="https://github.com/ziidxz" rel="me">GitHub</a></p>
+          <p class="live">Pages
+            <a href="https://ziidxz.github.io/order-demo/">order demo</a>
+            <a href="https://ziidxz.github.io/shiltut/">shiltut</a>
+          </p>
+        </div>
       </div>
-      <div class="close__side">
-        <a class="btn" href="https://github.com/ziidxz/ziidxz.github.io/issues">Open an issue</a>
-        <p class="live live--line">Questions or work: <a href="https://github.com/ziidxz" rel="me">github.com/ziidxz</a></p>
-        <p class="live">Pages
-          <a href="https://ziidxz.github.io/order-demo/">order demo</a>
-          <a href="https://ziidxz.github.io/shiltut/">shiltut</a>
-        </p>
-      </div>
+
+      <footer class="foot">
+        <div class="titleblock">
+          <div class="tb">
+            <span class="tb__k">Drawn on</span>
+            <span class="tb__v">Termux, Android</span>
+          </div>
+          <div class="tb">
+            <span class="tb__k">Date</span>
+            <span class="tb__v">October 2026</span>
+          </div>
+          <div class="tb">
+            <span class="tb__k">Projects</span>
+            <span class="tb__v tb__v--num">08</span>
+          </div>
+          <div class="tb">
+            <span class="tb__k">Sheet</span>
+            <span class="tb__v tb__v--num">01 of 01</span>
+          </div>
+        </div>
+      </footer>
     </div>
   </section>
 
 </main>
 
-<footer class="foot">
-  <div class="container foot__in">
-    <p class="foot__mark">ziidx</p>
-    <p class="foot__line">Termux, on Android. October 2026.</p>
-    <p class="foot__line">github.com/ziidxz</p>
-  </div>
-</footer>
+<script>
+(function () {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-in');
+      io.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.reg').forEach(function (reg) { io.observe(reg); });
+})();
+</script>
 
 </body>
 </html>
