@@ -113,6 +113,9 @@ a.r-name:hover { border-bottom-color: var(--halo); }
 .close { padding-block: var(--gap-4) var(--gap-3); border-top: 1px solid var(--hairline); }
 .close h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0 0 var(--gap-2); }
 .close p { margin: 0; color: var(--muted); max-width: var(--measure); }
+.close p + p { margin-top: var(--gap-1); }
+.close .support-link, .foot a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--hairline); }
+.close .support-link:hover, .foot a:hover { border-bottom-color: var(--halo); }
 .close__links { display: flex; gap: var(--gap-2); flex-wrap: wrap; margin-top: var(--gap-3); }
 
 .foot { padding-block: var(--gap-3); border-top: 1px solid var(--hairline); color: var(--muted); font-size: 0.85rem; }
