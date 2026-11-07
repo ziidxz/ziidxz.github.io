@@ -80,7 +80,6 @@ a:disabled, button:disabled { cursor: not-allowed; }
 .shot__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--gap-2); }
 .shot figure { margin: 0; border: 1px solid var(--hairline); border-radius: var(--radius-outer); overflow: hidden; background: var(--panel); }
 .shot img { display: block; width: 100%; height: auto; }
-.shot figcaption { padding: 0.6rem 0.9rem; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--hairline); }
 @media (min-width: 46rem) {
   .shot__grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start; }
 }

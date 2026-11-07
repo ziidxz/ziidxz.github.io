@@ -37,7 +37,7 @@
 
   <section class="hero container">
     <div class="hero__in">
-      <h1><img class="halo-mark" src="assets/halo-mark.svg" width="52" height="40" alt="">Mikanime, built on a phone</h1>
+      <h1><img class="halo-mark" src="assets/halo-mark.svg" width="52" height="40" alt="">Mikanime</h1>
       <p class="hero__sub">An anime streaming site. Zero npm packages.</p>
       <div class="hero__actions">
         <a class="btn btn--halo" href="#product">See the real screens</a>
@@ -50,11 +50,9 @@
     <div class="shot__grid">
       <figure>
         <img src="assets/mikanime-device-wide.webp" width="1280" height="1100" fetchpriority="high" alt="Mikanime on a phone: slim header with the halo mascot logo, hero card for The Apothecary Diaries Season 3 with Watch now and MyAnimeList actions, Trending now row below">
-        <figcaption>My phone, live catalog.</figcaption>
       </figure>
       <figure>
         <img src="assets/mikanime-device-full.webp" width="1280" height="2627" loading="lazy" alt="Mikanime full page on a phone: search field, hero card, and rows for Trending now, Latest episodes, Airing this season, Top rated">
-        <figcaption>Full page, same capture.</figcaption>
       </figure>
     </div>
   </section>
@@ -63,7 +61,7 @@
     <h2>How it is built</h2>
     <dl class="facts__list">
       <div><dt>Catalog</dt><dd>A zero-dependency Node server reads public catalog pages and turns them into clean JSON for the browser.</dd></div>
-      <div><dt>Rankings</dt><dd>AniList's API provides trending, top rated, and season lists. Every card carries its MAL id.</dd></div>
+      <div><dt>Rankings</dt><dd>the AniList API provides trending, top rated, and season lists. Every card carries its MAL id.</dd></div>
       <div><dt>Player</dt><dd>hls.js, plus controls I wrote myself: resume, continue watching, and a lock so taps don't skip.</dd></div>
       <div><dt>Where it runs</dt><dd>Written and tested in Termux on the phone. No PC.</dd></div>
     </dl>
