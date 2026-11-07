@@ -2,242 +2,98 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>document.documentElement.classList.add('js');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ziidx, software from a phone</title>
-<meta name="description" content="Android apps, Termux tools and small web pages, built on a phone. Eight projects, one opened up, and the code on GitHub.">
-<meta name="author" content="ziidx">
-<meta name="theme-color" content="#0d3970">
+<title>ziidx: software from a phone</title>
+<meta name="description" content="Mikanime, a live anime streamer, and other tools, all built on Termux on a phone. Real screens, real repositories.">
+<meta name="theme-color" content="#0b0e14">
 <meta property="og:type" content="profile">
-<meta property="og:title" content="ziidx, software from a phone">
-<meta property="og:description" content="Android apps, Termux tools and small web pages, built on a phone.">
+<meta property="og:title" content="ziidx: software from a phone">
+<meta property="og:description" content="Mikanime, a live anime streamer, and other tools, all built on Termux.">
 <meta property="og:url" content="https://ziidxz.github.io/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="preload" href="assets/fonts/quicksand-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="plot" aria-hidden="true"></div>
-<a class="skip" href="#main">Skip to content</a>
 
-<header class="nav">
-  <div class="container nav__in">
-    <a class="mark" href="#top" aria-label="Back to the top"><span class="mark__z" aria-hidden="true">Z</span></a>
-    <nav class="nav__links" aria-label="Main">
-      <a href="#register">Work</a>
-      <a href="https://github.com/ziidxz" rel="me">GitHub</a>
+<header class="mast">
+  <div class="container mast__in">
+    <a class="brand" href="#top" aria-label="Back to the top">
+      <img class="halo-mark" src="assets/halo-mark.svg" width="48" height="36" alt="">
+      <b>ziidx</b>
+    </a>
+    <nav aria-label="Main">
+      <a class="mast__link" href="https://github.com/ziidxz" rel="me">GitHub</a>
     </nav>
   </div>
 </header>
 
-<main id="main">
+<main id="top">
 
-  <section class="hero" id="top">
-    <div class="container">
-      <h1>ziidx</h1>
-      <p class="hero__line">Android apps, Termux tools and small web pages, built from a phone.</p>
+  <section class="hero container">
+    <div class="hero__in">
+      <h1><img class="halo-mark" src="assets/halo-mark.svg" width="52" height="40" alt="">Mikanime, built on a phone</h1>
+      <p class="hero__sub">A live anime streamer: one scraper, one mirror, one player.</p>
       <div class="hero__actions">
-        <a class="btn" href="#register">Open the register</a>
-        <a class="btn btn--quiet" href="https://github.com/ziidxz" rel="me">GitHub</a>
-      </div>
-      <div class="dim">
-        <span class="dim__value">GitHub account</span>
-        <div class="dim__line">
-          <span class="dim__end">Sep 2024</span>
-          <span class="dim__end dim__end--last">Oct 2026</span>
-        </div>
+        <a class="btn btn--halo" href="#product">See the real screens</a>
+        <a class="btn btn--ghost" href="https://github.com/ziidxz/ziidxz.github.io/issues/">Open an issue</a>
       </div>
     </div>
   </section>
 
-  <section class="register" id="register">
-    <div class="container">
-      <div class="head">
-        <h2>The register</h2>
-      </div>
-
-      <ul class="reg">
-        <li class="reg__row reg__row--head" aria-hidden="true">
-          <span class="reg__c reg__c--no">No.</span>
-          <span class="reg__c reg__c--name">Work</span>
-          <span class="reg__c reg__c--what" data-label="What it does">What it does</span>
-          <span class="reg__c reg__c--with">Built with</span>
-          <span class="reg__c reg__c--where" data-label="Where">Where</span>
-        </li>
-        <li class="reg__row reg__row--link">
-          <span class="reg__c reg__c--no num">01</span>
-          <h3 class="reg__c reg__c--name"><a href="#termux-browser">termux-browser</a></h3>
-          <span class="reg__c reg__c--what" data-label="What it does">A browser engine without Chromium</span>
-          <span class="reg__c reg__c--with" data-label="Built with">Node</span>
-          <span class="reg__c reg__c--where" data-label="Where"><span class="local">local</span></span>
-        </li>
-        <li class="reg__row">
-          <span class="reg__c reg__c--no num">02</span>
-          <h3 class="reg__c reg__c--name">Glass</h3>
-          <span class="reg__c reg__c--what" data-label="What it does">An iPhone-style launcher in Java</span>
-          <span class="reg__c reg__c--with" data-label="Built with">Java</span>
-          <span class="reg__c reg__c--where" data-label="Where"><span class="local">local</span></span>
-        </li>
-        <li class="reg__row">
-          <span class="reg__c reg__c--no num">03</span>
-          <h3 class="reg__c reg__c--name">hookfinder</h3>
-          <span class="reg__c reg__c--what" data-label="What it does">Vertical clips out of recordings</span>
-          <span class="reg__c reg__c--with" data-label="Built with">Node</span>
-          <span class="reg__c reg__c--where" data-label="Where"><span class="local">local</span></span>
-        </li>
-        <li class="reg__row">
-          <span class="reg__c reg__c--no num">04</span>
-          <h3 class="reg__c reg__c--name">orderpage</h3>
-          <span class="reg__c reg__c--what" data-label="What it does">Shop orders that open in WhatsApp</span>
-          <span class="reg__c reg__c--with" data-label="Built with">HTML</span>
-          <span class="reg__c reg__c--where" data-label="Where"><span class="local">local</span></span>
-        </li>
-        <li class="reg__row">
-          <span class="reg__c reg__c--no num">05</span>
-          <h3 class="reg__c reg__c--name">reroll-lab</h3>
-          <span class="reg__c reg__c--what" data-label="What it does">A planner and ledger for rerolls</span>
-          <span class="reg__c reg__c--with" data-label="Built with">JS</span>
-          <span class="reg__c reg__c--where" data-label="Where"><span class="local">local</span></span>
-        </li>
-        <li class="reg__row reg__row--link">
-          <span class="reg__c reg__c--no num">06</span>
-          <span class="reg__c reg__c--with" data-label="Built with">Flutter</span>
-        </li>
-        <li class="reg__row">
-          <span class="reg__c reg__c--no num">07</span>
-          <h3 class="reg__c reg__c--name">little garden</h3>
-          <span class="reg__c reg__c--what" data-label="What it does">A handmade page</span>
-          <span class="reg__c reg__c--with" data-label="Built with">CSS</span>
-          <span class="reg__c reg__c--where" data-label="Where"><span class="local">private</span></span>
-        </li>
-        <li class="reg__row">
-          <span class="reg__c reg__c--no num">08</span>
-          <h3 class="reg__c reg__c--name">shortlink-skip</h3>
-          <span class="reg__c reg__c--what" data-label="What it does">Skips shortlink countdowns</span>
-          <span class="reg__c reg__c--with" data-label="Built with">JS</span>
-          <span class="reg__c reg__c--where" data-label="Where"><span class="local">local</span></span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="without">
-    <div class="container">
-      <div class="head">
-        <h2>What runs instead</h2>
-      </div>
-      <ul class="reg reg--alt">
-        <li class="reg__row reg__row--head" aria-hidden="true">
-          <span class="reg__c reg__c--no">No.</span>
-          <span class="reg__c reg__c--name">Work</span>
-          <span class="reg__c reg__c--what">Missing</span>
-          <span class="reg__c reg__c--with">Runs instead</span>
-        </li>
-        <li class="reg__row">
-          <span class="reg__c reg__c--no num">01</span>
-          <h3 class="reg__c reg__c--name">termux-browser</h3>
-          <span class="reg__c reg__c--what" data-label="Missing">Chromium, WebView</span>
-          <span class="reg__c reg__c--with" data-label="Runs instead">its own cascade, PNG codec</span>
-        </li>
-        <li class="reg__row">
-          <span class="reg__c reg__c--no num">02</span>
-          <h3 class="reg__c reg__c--name">Glass</h3>
-          <span class="reg__c reg__c--what" data-label="Missing">Gradle, AndroidX</span>
-          <span class="reg__c reg__c--with" data-label="Runs instead">24 Java classes, no images</span>
-        </li>
-        <li class="reg__row">
-          <span class="reg__c reg__c--no num">06</span>
-          <span class="reg__c reg__c--what" data-label="Missing">Server, API key</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="sheet" id="termux-browser">
-    <div class="container sheet__in">
-      <div class="sheet__text">
-        <p class="sheet__no num">01</p>
-        <h2>termux-browser</h2>
-        <p class="lead">Chromium cannot run in Termux; the engine is written here.</p>
-        <dl class="facts">
-          <div><dt>Runs on</dt><dd>Node, on this phone</dd></div>
-          <div><dt>Renders</dt><dd>cascade, flex, grid</dd></div>
-          <div><dt>Writes</dt><dd>PNGs, own encoder</dd></div>
-          <div><dt>Lives</dt><dd>here, not published</dd></div>
-        </dl>
-      </div>
-
-      <figure class="code">
-        <figcaption>bin/tbrowse.mjs</figcaption>
-        <pre><code><span class="c">tbrowse, a headless browser for Termux</span>
-
-  tbrowse shot  &lt;file|url&gt; [--full]
-  tbrowse check &lt;file&gt;
-
-<span class="c">$</span> node bin/tbrowse.mjs check index.html
-<span class="out">page: 3359px tall at 1440px wide</span></code></pre>
+  <section class="shot container" id="product">
+    <div class="shot__grid">
+      <figure>
+        <img src="assets/mikanime-home-desktop.webp" width="1280" height="1000" fetchpriority="high" alt="Mikanime home screen on desktop: hero episode card and poster rows under the headings Trending now, Latest episodes, Airing this season and Top rated">
+        <figcaption>Captured from the running site, catalog data live at capture time.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/mikanime-home-phone.webp" width="390" height="660" loading="lazy" alt="Mikanime home screen on a phone: leading rows with posters">
+        <figcaption>Same page, 390 px phone width.</figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="close" id="contact">
-    <div class="container">
-      <div class="close__in">
-        <div>
-          <h2>Code on GitHub</h2>
-          <p class="lead">Four repos, two linked pages.</p>
-        </div>
-        <div class="close__side">
-          <a class="btn" href="https://github.com/ziidxz/ziidxz.github.io/issues">Open an issue</a>
-          <p class="live live--line">Questions or work: <a href="https://github.com/ziidxz" rel="me">GitHub</a></p>
-          <p class="live">Pages
-            <a href="https://ziidxz.github.io/order-demo/">order demo</a>
-            <a href="https://ziidxz.github.io/shiltut/">shiltut</a>
-          </p>
-        </div>
-      </div>
+  <section class="facts container">
+    <h2>How it is built</h2>
+    <dl class="facts__list">
+      <div><dt>Catalog, parsed not scraped</dt><dd>A zero-dependency Node server fetches and parses public catalog pages server side, so the browser only receives clean JSON.</dd></div>
+      <div><dt>Rankings, from the source of truth</dt><dd>Trending, top rated, and season tabs come from the AniList GraphQL gateway, which mirrors MAL titles; every card carries its MAL id.</dd></div>
+      <div><dt>Player, hand-built</dt><dd>HLS via a vendored hls.js with custom controls, resume position, continue-watching, and a locked mode so pocket taps cannot seek.</dd></div>
+      <div><dt>Phone, the whole studio</dt><dd>Written and tested in Termux on Android: Node, the browser engine for checks, no external screen at any step.</dd></div>
+    </dl>
+  </section>
 
-      <footer class="foot">
-        <div class="titleblock">
-          <div class="tb">
-            <span class="tb__k">Drawn on</span>
-            <span class="tb__v">Termux, Android</span>
-          </div>
-          <div class="tb">
-            <span class="tb__k">Date</span>
-            <span class="tb__v">October 2026</span>
-          </div>
-          <div class="tb">
-            <span class="tb__k">Projects</span>
-            <span class="tb__v tb__v--num">08</span>
-          </div>
-          <div class="tb">
-            <span class="tb__k">Sheet</span>
-            <span class="tb__v tb__v--num">01 of 01</span>
-          </div>
-        </div>
-      </footer>
+  <section class="register container" id="register">
+    <h2>Other work in the register</h2>
+    <ul class="register__rows">
+      <li><span class="r-name">termux-browser</span><span class="r-what">A browser engine with its own CSS cascade, layout, and rasteriser, without Chromium</span><span class="r-where">this machine</span></li>
+      <li><a class="r-name" href="https://github.com/ziidxz/sunk">sunk</a><span class="r-what">A ledger for subscriptions: what renews, what changed price, what cancelling gives back</span><span class="r-where">on GitHub</span></li>
+      <li><span class="r-name">orderpage</span><span class="r-what">Shop orders that open as WhatsApp messages</span><span class="r-where">this machine</span></li>
+      <li><span class="r-name">shortlink-skip</span><span class="r-what">A userscript that skips link shortener countdowns</span><span class="r-where">in use</span></li>
+    </ul>
+  </section>
+
+  <section class="close container" id="contact">
+    <h2>Work with me</h2>
+    <p>Repairs, small tools, or a screen like this one, all built for phone-size budgets.
+    Issue boards on GitHub are read daily.</p>
+    <div class="close__links">
+      <a class="btn btn--halo" href="https://github.com/ziidxz/ziidxz.github.io/issues/">Open an issue</a>
+      <a class="btn" href="https://github.com/ziidxz" rel="me">GitHub</a>
     </div>
   </section>
 
 </main>
 
-<script>
-(function () {
-  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-in');
-      io.unobserve(entry.target);
-    });
-  }, { rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('.reg').forEach(function (reg) { io.observe(reg); });
-})();
-</script>
+<footer class="foot">
+  <div class="container">
+    <img class="halo-mark" src="assets/halo-mark.svg" width="34" height="26" alt="">
+    Built in Termux, Android. Site live from November 2026. ziidx
+  </div>
+</footer>
 
 </body>
 </html>

@@ -1,4 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="ziidx">
-  <rect width="32" height="32" fill="oklch(35% 0.105 256)"/>
-  <path d="M7 8h18v4.4L14.6 20H25v4H7v-4.4L18.2 12H7z" fill="oklch(97% 0.012 240)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 96">
+  <!-- Mikanime brand mark: Mika Misono's halo as it appears on the mascot –
+       tilted pink ring with plus-star sparkles. No raster filters: weak
+       engines rasterize this straight. Gradient lives on the ring only. -->
+  <defs>
+    <linearGradient id="mhalo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".45" stop-color="#fbd9e9"/>
+      <stop offset="1" stop-color="#f9c9e3"/>
+    </linearGradient>
+  </defs>
+  <!-- soft under-glow: a wider, faint ring. no filter blur -->
+  <ellipse cx="64" cy="58" rx="40" ry="12" fill="none" stroke="#f2a6c8" stroke-opacity=".34" stroke-width="10" stroke-linecap="round"/>
+  <g fill="none" stroke="url(#mhalo)" stroke-linecap="round">
+    <ellipse cx="64" cy="58" rx="40" ry="12" stroke-width="6"/>
+    <!-- ring highlight: short top arc like the drip on the original -->
+    <path d="M34 51c6-6 17-9 27-9" stroke-width="3.5" stroke-opacity=".9"/>
+    <!-- canon plus-star, tilted, right side -->
+    <path d="M98 22l0 15M90.5 29.5l15 0" stroke="#e8c9f2" stroke-width="5.5" transform="rotate(12 98 29.5)"/>
+    <!-- small plus at the left, violet -->
+    <path d="M24 46l0 8M20 50l8 0" stroke="#cbb2f4" stroke-width="4"/>
+  </g>
+  <g fill="#f9c9e3">
+    <circle cx="47" cy="27" r="2.2"/>
+    <circle cx="113" cy="63" r="2.2"/>
+    <circle cx="57" cy="41" r="1.6" fill="#ffffff"/>
+  </g>
 </svg>

@@ -1,0 +1,124 @@
+/* hallmark stamp fields above */
+/* page rules: flat hairline surfaces, halo reserved for identity and focus, hover motion only */
+
+html, body { overflow-x: clip; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+* { box-sizing: border-box; }
+
+a, button, summary, select, label { cursor: pointer; }
+a:disabled, button:disabled { cursor: not-allowed; }
+
+/* focus everywhere, instantly visible, brand colour */
+:focus-visible {
+  outline: 2px solid var(--halo);
+  outline-offset: 2px;
+  border-radius: var(--radius-inner);
+}
+
+/* the halo image mark floats under motion, holds still under reduce (R-19, R-39) */
+@keyframes halo-float {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-0.35rem) rotate(-1deg); }
+}
+
+.container { max-width: var(--container); margin-inline: auto; padding-inline: clamp(1rem, 4vw, 2.5rem); }
+
+/* header: brand left, one contact action right */
+.mast { padding-block: var(--gap-3) 0; }
+.mast__in { display: flex; align-items: center; justify-content: space-between; gap: var(--gap-2); }
+.brand { display: inline-flex; align-items: center; gap: var(--gap-1); text-decoration: none; color: var(--text); }
+.brand .halo-mark { width: 2.4rem; height: 1.8rem; }
+.brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; letter-spacing: 0.01em; }
+.mast__link { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--hairline); }
+.mast__link:hover { color: var(--text); border-bottom-color: var(--halo); }
+.halo-mark { display: inline-block; }
+
+/* hero: headline, one sentence, two actions, the floating halo beside (58 words) */
+.hero { padding-block: var(--gap-4) var(--gap-3); }
+.hero__in { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--gap-3); align-items: end; }
+.hero h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 6vw, 3.2rem);
+  line-height: 1.12;
+  max-width: 21ch;
+  text-wrap: balance;
+}
+.hero h1 .halo-mark { width: 3.4rem; height: 2.6rem; margin-right: 0.6rem; vertical-align: -0.4rem; animation: halo-float 6s ease-in-out infinite; }
+.facts h2, .register h2, .close h2 { text-wrap: balance; }
+.hero__sub { color: var(--muted); max-width: var(--measure); margin: 0; }
+.hero__actions { display: flex; gap: var(--gap-2); flex-wrap: wrap; align-items: center; }
+
+/* buttons: one primary style, distinct states, quiet secondary */
+.btn {
+  display: inline-flex; align-items: center; gap: var(--gap-1);
+  font-family: var(--font-body); font-size: 0.95rem; font-weight: 600;
+  padding: 0.7rem 1.1rem; min-height: 44px;
+  border-radius: var(--radius-inner); text-decoration: none; white-space: nowrap;
+  border: 1px solid var(--hairline); background: var(--panel); color: var(--text);
+  transition: border-color 150ms ease, color 150ms ease, transform 150ms ease;
+}
+.btn:hover { border-color: var(--halo); color: var(--halo); }
+.btn:active { transform: translateY(1px); }
+.btn--halo { background: var(--halo); color: var(--halo-ink); border-color: var(--halo); }
+.btn--halo:hover { color: var(--halo-ink); filter: brightness(1.05); }
+.btn--ghost { background: transparent; border-color: transparent; color: var(--muted); padding-inline: 0.55rem; }
+.btn--ghost:hover { color: var(--text); border-bottom: 1px solid var(--hairline); }
+
+/* captured product: the real screens carry the page (imagery first) */
+.shot { padding-block: 0 var(--gap-4); }
+.shot__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--gap-2); }
+.shot figure { margin: 0; border: 1px solid var(--hairline); border-radius: var(--radius-outer); overflow: hidden; background: var(--panel); }
+.shot img { display: block; width: 100%; height: auto; }
+.shot figcaption { padding: 0.6rem 0.9rem; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--hairline); }
+@media (min-width: 46rem) {
+  .shot__grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start; }
+}
+
+/* engineering: uneven truth pillars, no bento, no icons (R-14) */
+.facts { padding-block: var(--gap-4); }
+.facts h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; margin: 0 0 var(--gap-3); }
+.facts__list { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--gap-2) var(--gap-4); }
+.facts__list dt { font-weight: 600; color: var(--text); }
+.facts__list dd { margin: 0.15rem 0 0; color: var(--muted); }
+@media (min-width: 46rem) {
+  .facts__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* register of other real work: plain rows, status words, no fake links (R-38) */
+.register { padding-block: var(--gap-4); border-top: 1px solid var(--hairline); }
+.register h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; margin: 0 0 var(--gap-2); }
+.register__rows { list-style: none; margin: 0; padding: 0; }
+.register__rows li { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.15rem 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--hairline); }
+.register__rows .r-name { font-weight: 600; color: var(--text); text-decoration: none; justify-self: start; }
+a.r-name { border-bottom: 1px solid var(--hairline); }
+a.r-name:hover { border-bottom-color: var(--halo); }
+.register__rows .r-what { color: var(--muted); overflow-wrap: break-word; min-width: 0; }
+.register__rows .r-where { color: var(--muted); font-size: 0.85rem; }
+@media (min-width: 46rem) {
+  .register__rows li { grid-template-columns: 13rem minmax(0, 1fr) 8rem; align-content: start; row-gap: 0.6rem; }
+}
+
+/* contact */
+.close { padding-block: var(--gap-4) var(--gap-3); border-top: 1px solid var(--hairline); }
+.close h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0 0 var(--gap-2); }
+.close p { margin: 0; color: var(--muted); max-width: var(--measure); }
+.close__links { display: flex; gap: var(--gap-2); flex-wrap: wrap; margin-top: var(--gap-3); }
+
+.foot { padding-block: var(--gap-3); border-top: 1px solid var(--hairline); color: var(--muted); font-size: 0.85rem; }
+.foot .halo-mark { width: 1.7rem; height: 1.3rem; vertical-align: -0.35rem; margin-right: 0.5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 svg { animation: none; }
+  * { transition: none; }
+}
