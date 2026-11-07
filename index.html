@@ -38,7 +38,7 @@
   <section class="hero container">
     <div class="hero__in">
       <h1><img class="halo-mark" src="assets/halo-mark.svg" width="52" height="40" alt="">Mikanime, built on a phone</h1>
-      <p class="hero__sub">A live anime streamer: one scraper, one mirror, one player.</p>
+      <p class="hero__sub">An anime streaming site. Zero npm packages.</p>
       <div class="hero__actions">
         <a class="btn btn--halo" href="#product">See the real screens</a>
         <a class="btn btn--ghost" href="https://github.com/sponsors/ziidxz">Sponsor, any amount</a>
@@ -50,7 +50,7 @@
     <div class="shot__grid">
       <figure>
         <img src="assets/mikanime-device-wide.webp" width="1280" height="1100" fetchpriority="high" alt="Mikanime on a phone: slim header with the halo mascot logo, hero card for The Apothecary Diaries Season 3 with Watch now and MyAnimeList actions, Trending now row below">
-        <figcaption>My phone, my site, live catalog at capture time.</figcaption>
+        <figcaption>My phone, live catalog.</figcaption>
       </figure>
       <figure>
         <img src="assets/mikanime-device-full.webp" width="1280" height="2627" loading="lazy" alt="Mikanime full page on a phone: search field, hero card, and rows for Trending now, Latest episodes, Airing this season, Top rated">
@@ -62,27 +62,26 @@
   <section class="facts container">
     <h2>How it is built</h2>
     <dl class="facts__list">
-      <div><dt>Catalog, parsed not scraped</dt><dd>A zero-dependency Node server fetches and parses public catalog pages server side, so the browser only receives clean JSON.</dd></div>
-      <div><dt>Rankings, from the source of truth</dt><dd>Trending, top rated, and season tabs come from the AniList GraphQL gateway, which mirrors MAL titles; every card carries its MAL id.</dd></div>
-      <div><dt>Player, hand-built</dt><dd>HLS via a vendored hls.js with custom controls, resume position, continue-watching, and a locked mode so pocket taps cannot seek.</dd></div>
-      <div><dt>Phone, the whole studio</dt><dd>Written and tested in Termux on Android: Node, the browser engine for checks, no external screen at any step.</dd></div>
+      <div><dt>Catalog</dt><dd>A zero-dependency Node server reads public catalog pages and turns them into clean JSON for the browser.</dd></div>
+      <div><dt>Rankings</dt><dd>AniList's API provides trending, top rated, and season lists. Every card carries its MAL id.</dd></div>
+      <div><dt>Player</dt><dd>hls.js, plus controls I wrote myself: resume, continue watching, and a lock so taps don't skip.</dd></div>
+      <div><dt>Where it runs</dt><dd>Written and tested in Termux on the phone. No PC.</dd></div>
     </dl>
   </section>
 
   <section class="register container" id="register">
-    <h2>Other work in the register</h2>
+    <h2>Other work</h2>
     <ul class="register__rows">
-      <li><span class="r-name">termux-browser</span><span class="r-what">A browser engine with its own CSS cascade, layout, and rasteriser, without Chromium</span><span class="r-where">this machine</span></li>
-      <li><a class="r-name" href="https://github.com/ziidxz/sunk">sunk</a><span class="r-what">A ledger for subscriptions: what renews, what changed price, what cancelling gives back</span><span class="r-where">on GitHub</span></li>
-      <li><span class="r-name">orderpage</span><span class="r-what">Shop orders that open as WhatsApp messages</span><span class="r-where">this machine</span></li>
-      <li><span class="r-name">shortlink-skip</span><span class="r-what">A userscript that skips link shortener countdowns</span><span class="r-where">in use</span></li>
+      <li><span class="r-name">termux-browser</span><span class="r-what">A small web browser for checking pages. Own rendering, no Chromium.</span><span class="r-where">this machine</span></li>
+      <li><a class="r-name" href="https://github.com/ziidxz/sunk">sunk</a><span class="r-what">A ledger for subscriptions and their prices.</span><span class="r-where">on GitHub</span></li>
+      <li><span class="r-name">orderpage</span><span class="r-what">Shop orders that open in WhatsApp.</span><span class="r-where">this machine</span></li>
+      <li><span class="r-name">shortlink-skip</span><span class="r-what">Skips link shortener countdowns.</span><span class="r-where">in use</span></li>
     </ul>
   </section>
 
   <section class="close container" id="contact">
     <h2>Work with me</h2>
-    <p>Repairs, small tools, or a screen like this one, all built for phone-size budgets.
-    Issue boards on GitHub are read daily.</p>
+    <p>Repairs, small tools, or a page like this one. I answer on GitHub.</p>
     <p>If the work saved you time, <a class="support-link" href="https://github.com/sponsors/ziidxz">sponsor one-time, any amount</a>.</p>
     <div class="close__links">
       <a class="btn btn--halo" href="https://github.com/ziidxz/ziidxz.github.io/issues/">Open an issue</a>
